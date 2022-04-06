@@ -4,22 +4,15 @@ WebServer
 
 const cors = require('cors');
 const express = require('express');
-const axios = require('axios');
 const app = express();
-const http = require('http');
 const https = require('https');
-const { append } = require('express/lib/response');
-
-
-const BTCUSDT = "BTC_USDT";
-
 
 app.use(express.static('public_html'));
 app.use(express.json());
 app.use(cors({ origin: ['http://localhost:3000'], methods: ['GET', 'POST'] }));
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html', { root: __dirname + "/public" })
+    res.sendFile('index.html', { root: __dirname + "/public_html" })
 })
 
 
@@ -44,7 +37,7 @@ app.post('/coins/:coppia', (req, res) => {
 
 
 app.all('*', (req, res) => {
-    res.sendFile('404.html', { root: __dirname + "/public" })
+    res.sendFile('404.html', { root: __dirname + "/public_html" })
 })
 
 app.listen(3000);
