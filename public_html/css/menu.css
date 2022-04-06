@@ -1,0 +1,24 @@
+@media (min-width: 1440px) {
+    /* schermi grandi, PC */
+    .grid-containerM {
+        display: grid;
+        gap: 1em;
+        grid-auto-columns: 1fr;
+        grid-template-areas: "l" "m" "m" "m" "c";
+    }
+    .elementM {
+        background: #aa65bb !important;
+        padding: 1em;
+        box-shadow: 1px 1px 3px rgb(45, 28, 196) !important;
+        text-align: center;
+    }
+    .elementM:nth-child(1) {
+        grid-area: l;
+    }
+    .elementM:nth-child(2) {
+        grid-area: m;
+    }
+    .elementM:nth-child(3) {
+        grid-area: c;
+    }
+}
