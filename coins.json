@@ -1,55 +1,46 @@
 [{
-        "id": "0",
-        "name": "Tether",
-        "coin": "USDT",
-        "img": "icon/USDT.png"
-    },
-    {
-        "id": "1",
-        "name": "Bitcoin",
-        "coin": "BTC",
-        "img": "icon/BTC.png"
-    },
-    {
-        "id": "2",
-        "name": "Ethereum",
-        "coin": "ETH",
-        "img": "icon/ETH.png"
-    },
-    {
-        "id": "3",
-        "name": "Cronos",
-        "coin": "CRO",
-        "img": "icon/CRO.png"
-    },
-    {
-        "id": "4",
-        "name": "TerraLuna",
-        "coin": "LUNA",
-        "img": "icon/LUNA.png"
-    },
-    {
-        "id": "5",
-        "name": "TerraUST",
-        "coin": "UST",
-        "img": "icon/UST.png"
-    },
-    {
-        "id": "6",
-        "name": "Stacks",
-        "coin": "STX",
-        "img": "icon/STX.png"
-    },
-    {
-        "id": "7",
-        "name": "Dogecoin",
-        "coin": "DOGE",
-        "img": "icon/DOGE.png"
-    },
-    {
-        "id": "8",
-        "name": "TerraUST",
-        "coin": "UST",
-        "img": "icon/UST.png"
-    }
+    "name": "Tether",
+    "coin": "USDT",
+    "img": "icon/USDT.png"
+},
+{
+    "name": "Bitcoin",
+    "coin": "BTC",
+    "img": "icon/BTC.png"
+},
+{
+    "name": "Ethereum",
+    "coin": "ETH",
+    "img": "icon/ETH.png"
+},
+{
+    "name": "Cronos",
+    "coin": "CRO",
+    "img": "icon/CRO.png"
+},
+{
+    "name": "TerraLuna",
+    "coin": "LUNA",
+    "img": "icon/LUNA.png"
+},
+{
+    "name": "TerraUST",
+    "coin": "UST",
+    "img": "icon/UST.png"
+},
+{
+    "name": "Stacks",
+    "coin": "STX",
+    "img": "icon/STX.png"
+},
+{
+    "name": "Dogecoin",
+    "coin": "DOGE",
+    "img": "icon/DOGE.png"
+},
+{
+    "name": "TerraUST",
+    "coin": "UST",
+    "img": "icon/UST.png"
+}
 ]
