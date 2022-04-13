@@ -2,9 +2,9 @@
     "name": "testnodejs",
     "version": "1.0.0",
     "description": "",
-    "main": "webServer.js",
+    "main": "server.js",
     "scripts": {
-        "start": "nodemon webServer.js"
+        "start": "nodemon server.js"
     },
     "keywords": [],
     "author": "",

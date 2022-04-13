@@ -9,6 +9,7 @@ const express = require('express');
 const app = express();
 const coinsJSON = require('./db/coins.json');
 
+
 function getPrice(idCoin){
     var options ={
         host: 'api.crypto.com', // here only the domain name (no http/https!)
@@ -18,18 +19,17 @@ function getPrice(idCoin){
     const coinVal = https.request(options, coinRes => { //chiedo dati all'API nell'opzions
         coinRes.on('data', d => {
             resJSON = JSON.parse(d); // parsifico la lettura
+            var coinsPrice;
+            coinsPrice[idCoin].coin = coinsJSON[idCoin].coin
             if(resJSON.result.data.b == undefined){
-                coinsJSON[idCoin].price = 1.00
+                coinsPrice[idCoin].price = 1.00
             }else{
-                coinsJSON[idCoin].price = resJSON.result.data.b; //salvo il valore della coin
+                coinsPrice[idCoin].price = resJSON.result.data.b; //salvo il valore della coin
             }
-            console.log(coinsJSON[idCoin].price);
-            fs.writeFile('./db/coins.json',JSON.stringify(coinsJSON), (err) => { // aggiorno il JSON
+            fs.writeFile('./db/prices.json',JSON.stringify(coinsPrice), (err) => { // aggiorno il JSON
                 if (err) throw err;
                 //console.log('Data written to file');
-            });
-        });
-        coinRes.send(coinsJSON);
+            });        });
     });
     coinVal.on('error', error => {console.error(error)});
     coinVal.end(); // chiudo la richiesta all'API
@@ -40,10 +40,15 @@ app.use(express.json());
 app.use(cors({ origin: ['http://localhost:3000'], methods: ['GET', 'POST'] }));
 
 app.post('/coins', (req, res) => {
-    for (let id = 1; id < Object.keys(coinsJSON).length/*restituisce dimensione JSON*/; id++) {
+    res.send(coinsJSON)
+});
+app.post('/coins/price-all', (req, res) => {
+    for (let id = 1; id < Object.keys(coinsPrice).length/*restituisce dimensione JSON*/; id++) {
         getPrice(id); // leggo il PRICE della coin
     }
-    res.send(coinsJSON)
+
+    var coinsPrice = require('./db/prices.json');
+    res.send(coinsPrice)
 });
 
 app.get('/', (req, res) => {res.sendFile('index.html', { root: __dirname + "/public_html" })});
